@@ -1,38 +1,26 @@
 import AddUser from "../../application/use_cases/user/AddUser";
-import ApiError from "../../frameworks/Error/ApiError";
 import { ControllerResponse, ProjectDependencies } from "../../model/global";
+import { run } from "../utils";
 
 export default (dependencies: ProjectDependencies) => {
   const { userRepository } = dependencies.DatabaseService;
 
-  const addNewUser = (
+  const addNewUser = async (
     firstName: string,
     lastName: string,
     email: string
-  ): ControllerResponse => {
+  ): Promise<ControllerResponse> => {
     const addUserCommand = AddUser(userRepository);
-    try {
-      const user = addUserCommand.execute(firstName, lastName, email);
 
-      return {
-        status: 200,
-        data: user,
-      };
-    } catch (error) {
-      if (error instanceof ApiError)
-        return {
-          status: error.status,
-          data: error.message,
-        };
-    }
+    const user = await addUserCommand.execute(firstName, lastName, email);
 
     return {
-      status: 500,
-      data: "Problem creating user",
+      status: 200,
+      data: user,
     };
   };
 
-  return {
+  return run({
     addNewUser,
-  };
+  });
 };
