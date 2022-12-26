@@ -5,12 +5,12 @@ import {
   RouterProvider,
 } from "react-router-dom";
 import SignIn from "../authentication/pages/SignIn";
-import Main from "../layout/Main";
+import Authentication from "../layout/Authentication";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/">
-      <Route element={<Main />}>
+      <Route element={<Authentication />}>
         <Route path="/login" element={<SignIn />}></Route>
       </Route>
     </Route>
