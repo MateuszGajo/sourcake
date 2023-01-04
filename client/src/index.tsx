@@ -4,6 +4,7 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import StoreProvider from "./application/appStoreProvider";
 import RouteProvider from "./presentation/routes/routeProvider";
+import AppThemeProvider from "./config/ThemeProvider";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
@@ -11,8 +12,7 @@ const root = ReactDOM.createRoot(
 root.render(
   <React.StrictMode>
     <StoreProvider>
-      <RouteProvider />
-      <App />
+    <App />
     </StoreProvider>
   </React.StrictMode>
 );

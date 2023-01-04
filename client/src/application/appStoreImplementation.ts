@@ -1,8 +1,8 @@
 import { combineReducers, legacy_createStore as createStore } from "redux";
-import { usersReducer } from "./data/userReducer";
+import { combineUserReducer } from "./data/user/userReducer";
 
 const rootReducer = combineReducers({
-  users: usersReducer,
+  users: combineUserReducer,
 });
 
 const appStoreImplementation = createStore(rootReducer);

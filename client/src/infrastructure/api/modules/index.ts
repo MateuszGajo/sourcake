@@ -1,5 +1,7 @@
-import user from "./user-api";
+import user from "./user";
+import auth from "./auth";
 
-export const agent = {
+export const infrastructure = {
   user,
+  auth,
 };

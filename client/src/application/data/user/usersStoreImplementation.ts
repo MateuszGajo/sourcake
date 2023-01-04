@@ -1,9 +1,9 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { AppRootState } from "../appStoreImplementation";
-import { User } from "../domain/userEntity";
-import { UserStore } from "../domain/userStore";
-import { updateUsersAction } from "./userActions";
+import { AppRootState } from "../../appStoreImplementation";
+import { User } from "../../domain/user/userEntity";
+import { UserStore } from "../../domain/user/userStore";
+import { updateUsersAction, loginUserAction } from "./userActions";
 
 const usersSelector = (state: AppRootState) => state.users;
 
@@ -17,9 +17,15 @@ const useUserStoreImplementation = (): UserStore => {
     [dispatch]
   );
 
+  const loginUser = React.useCallback(
+    (user: User) => loginUserAction(user)(dispatch),
+    [dispatch]
+  );
+
   return {
     users,
     updateUsers,
+    loginUser,
   };
 };
 

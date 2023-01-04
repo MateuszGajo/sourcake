@@ -1,4 +1,4 @@
-import { User } from "../../../../application/domain/userEntity";
+import { User } from "../../../../application/domain/user/userEntity";
 import { Impossible } from "../../shared/types";
 import { APIUser } from "../../types/user";
 
