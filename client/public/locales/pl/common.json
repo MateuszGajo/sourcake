@@ -1,0 +1,10 @@
+{
+  "form": {
+    "login": "Zaloguj się",
+    "password": "Hasło",
+    "registerButton": "Zarejstruj się",
+    "fieldRequired": "To pole jest wymagane",
+    "dontHaveAccount": "Nie masz konta",
+    "register": "Zarejestruj się"
+  }
+}

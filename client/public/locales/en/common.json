@@ -1,0 +1,9 @@
+{
+  "form": {
+    "login": "Login",
+    "password": "Password",
+    "register": "Register",
+    "fieldRequired": "This field is required",
+    "dontHaveAccount": "Dont have an account"
+  }
+}
